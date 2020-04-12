@@ -1,11 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.CropActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频裁剪宽度" />
+
+            <EditText
+                android:id="@+id/crop_et_w"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="视频裁剪宽度"
+                android:inputType="number"
+                android:minWidth="@dimen/etMiniWidth" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频裁剪高度" />
+
+            <EditText
+                android:id="@+id/crop_et_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="视频裁剪高度"
+                android:inputType="number"
+                android:minWidth="@dimen/etMiniWidth" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="裁剪的起始坐标x" />
+
+            <EditText
+                android:id="@+id/crop_et_start_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="裁剪的起始坐标x"
+                android:inputType="number"
+                android:minWidth="@dimen/etMiniWidth" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="裁剪的起始坐标y" />
+
+            <EditText
+                android:id="@+id/crop_et_start_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="裁剪的起始坐标y"
+                android:inputType="number"
+                android:minWidth="@dimen/etMiniWidth" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickSelFile"
+            android:text="选择文件" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickPreview"
+            android:text="预览" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickStart"
+            android:text="开始裁剪视频画面" />
 
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <VideoView
+                android:id="@+id/crop_vv"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp" />
+
+            <com.guli.videotool.view.MView
+                android:id="@+id/crop_mv"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <include layout="@layout/include_text" />
 </RelativeLayout>

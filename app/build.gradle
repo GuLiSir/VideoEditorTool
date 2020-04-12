@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.guli.videotool"
-        minSdkVersion 22
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -39,5 +39,8 @@ dependencies {
 
     //视频工具库   https://github.com/yangjie10930/EpMedia
     implementation 'com.github.yangjie10930:EpMedia:v0.9.5'
+
+    //图片编辑库  https://github.com/waterCode/CropImageProject
+//    implementation project(':cropimagelibrary')
 
 }

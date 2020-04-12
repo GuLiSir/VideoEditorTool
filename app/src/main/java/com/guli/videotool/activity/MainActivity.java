@@ -14,12 +14,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        startActivity(new Intent(this,CropActivity.class));
-        startActivity(new Intent(this,ClipActivity.class));
 
-        finish();
+
+
+//        finish();
 
     }
 
 
+    public void clickClip(View view) {
+        startActivity(new Intent(this,ClipActivity.class));
+    }
+
+    public void clickCrop(View view) {
+        startActivity(new Intent(this,CropActivity.class));
+    }
+
+    public void clickMerge(View view) {
+        startActivity(new Intent(this,MergeActivity.class));
+    }
+
+    public void clickDel(View view) {
+        startActivity(new Intent(this,DelActivity.class));
+    }
 }
